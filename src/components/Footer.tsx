@@ -221,7 +221,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://www.instagram.com/sparklhavencleaning/" target='_blink'
+                  href="https://www.instagram.com/sparklhavencleaning/" target='_blank'
                   className={`text-sm lg:text-base transition-colors duration-300 block ${
                     isDarkMode 
                       ? 'text-gray-400 hover:text-blue-400' 
@@ -229,6 +229,42 @@ const Footer = () => {
                   }`}
                 >
                   {t('Instagram')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61583366373894" target='_blank'
+                  className={`text-sm lg:text-base transition-colors duration-300 block ${
+                    isDarkMode 
+                      ? 'text-gray-400 hover:text-blue-400' 
+                      : 'text-gray-600 hover:text-blue-700'
+                  }`}
+                >
+                  {t('Facebook')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.youtube.com/@SparklHavenCleaning" target='_blank'
+                  className={`text-sm lg:text-base transition-colors duration-300 block ${
+                    isDarkMode 
+                      ? 'text-gray-400 hover:text-blue-400' 
+                      : 'text-gray-600 hover:text-blue-700'
+                  }`}
+                >
+                  {t('YouTube')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://x.com/Sparklhaven" target='_blank'
+                  className={`text-sm lg:text-base transition-colors duration-300 block ${
+                    isDarkMode 
+                      ? 'text-gray-400 hover:text-blue-400' 
+                      : 'text-gray-600 hover:text-blue-700'
+                  }`}
+                >
+                  {t('Twitter')}
                 </a>
               </li>
             </ul>

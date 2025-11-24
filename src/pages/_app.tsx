@@ -106,8 +106,10 @@ function AppContent({ Component, pageProps }: AppProps) {
                 }
               ],
               "sameAs": [
-                "https://www.instagram.com/sparklhaven",
-                "https://www.facebook.com/sparklhaven"
+                "https://www.instagram.com/sparklhavencleaning/",
+                "https://www.facebook.com/profile.php?id=61583366373894",
+                "https://www.youtube.com/@SparklHavenCleaning",
+                "https://x.com/Sparklhaven",
               ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
