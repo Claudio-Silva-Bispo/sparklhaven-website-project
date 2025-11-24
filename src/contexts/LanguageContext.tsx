@@ -54,7 +54,11 @@ type TranslationKey =
   | 'feedback.badge' | 'feedback.title' | 'feedback.subtitle' | 'feedback.rate'
   | 'feedback.name' | 'feedback.namePlaceholder' | 'feedback.email' | 'feedback.emailPlaceholder'
   | 'feedback.phone' | 'feedback.phonePlaceholder' | 'feedback.message' | 'feedback.messagePlaceholder'
-  | 'feedback.submit' | 'feedback.thanks' | 'feedback.thanksDesc' ;
+  | 'feedback.submit' | 'feedback.thanks' | 'feedback.thanksDesc' 
+  | 'faq.badge' | 'faq.title' | 'faq.subtitle'
+  | 'faq.question1' | 'faq.answer1' | 'faq.question2' | 'faq.answer2' | 'faq.question3' | 'faq.answer3'
+  | 'faq.question4' | 'faq.answer4' | 'faq.question5' | 'faq.answer5'
+  | 'faq.cta.title' | 'faq.cta.subtitle' | 'faq.cta.button';
 
 type Translations = Record<TranslationKey, string>;
 
@@ -250,7 +254,25 @@ const translations: Record<Language, Translations> = {
     'feedback.messagePlaceholder': 'Tell us about your experience...',
     'feedback.submit': 'Send Feedback',
     'feedback.thanks': 'Thank you for your feedback!',
-    'feedback.thanksDesc': 'Your opinion is very important to us.'
+    'feedback.thanksDesc': 'Your opinion is very important to us.',
+
+    // FAQ
+    'faq.badge': 'Frequently Asked Questions',
+    'faq.title': 'Questions & Answers',
+    'faq.subtitle': 'Find answers to the most common questions about our cleaning services',
+    'faq.question1': 'Do you offer house cleaning in Bellevue, WA?',
+    'faq.answer1': 'Yes! We serve Bellevue and nearby areas with house cleaning, deep cleaning, and move-in/move-out services.',
+    'faq.question2': 'Do you use eco-friendly products?',
+    'faq.answer2': 'Yes! We use products that are safe for your family, pets, and the environment, ideal for residential and commercial routines.',
+    'faq.question3': 'Do you service offices and workshops in Seattle and Redmond?',
+    'faq.answer3': 'Yes! We offer commercial and office cleaning for businesses in Seattle, Redmond, Kirkland, Bothell, and nearby regions.',
+    'faq.question4': 'Do you offer move-in/move-out cleaning?',
+    'faq.answer4': 'Yes. We perform complete cleaning for moves, ensuring the property is spotless when entering or delivering the property.',
+    'faq.question5': 'Is it possible to schedule cleaning on weekends?',
+    'faq.answer5': 'Yes! We have flexible schedules, including weekends, according to schedule availability.',
+    'faq.cta.title': 'Still have questions?',
+    'faq.cta.subtitle': 'Contact us and we\'ll be happy to help you!',
+    'faq.cta.button': 'Contact Us Now',
   },
   pt: {
     // Navbar
@@ -442,7 +464,25 @@ const translations: Record<Language, Translations> = {
     'feedback.messagePlaceholder': 'Conte sua experiência...',
     'feedback.submit': 'Enviar Feedback',
     'feedback.thanks': 'Obrigado pelo seu feedback!',
-    'feedback.thanksDesc': 'Sua opinião é muito importante para nós.'
+    'feedback.thanksDesc': 'Sua opinião é muito importante para nós.',
+    
+    // FAQ
+    'faq.badge': 'Perguntas Frequentes',
+    'faq.title': 'Dúvidas & Respostas',
+    'faq.subtitle': 'Encontre respostas para as perguntas mais comuns sobre nossos serviços de limpeza',
+    'faq.question1': 'Vocês oferecem house cleaning em Bellevue, WA?',
+    'faq.answer1': 'Sim! Atendemos Bellevue e áreas próximas com serviços de house cleaning, deep cleaning e move-in/move-out.',
+    'faq.question2': 'Vocês utilizam produtos eco-friendly?',
+    'faq.answer2': 'Sim! Utilizamos produtos seguros para sua família, pets e meio-ambiente, ideais para rotinas residenciais e comerciais.',
+    'faq.question3': 'Atendem escritórios e oficinas em Seattle e Redmond?',
+    'faq.answer3': 'Sim! Oferecemos commercial e office cleaning para empresas em Seattle, Redmond, Kirkland, Bothell e regiões próximas.',
+    'faq.question4': 'Vocês oferecem limpeza para mudança (move-in/move-out)?',
+    'faq.answer4': 'Sim. Realizamos limpeza completa para mudanças, garantindo o imóvel spotless ao entrar ou entregar a propriedade.',
+    'faq.question5': 'É possível agendar limpeza aos finais de semana?',
+    'faq.answer5': 'Sim! Temos horários flexíveis, incluindo finais de semana, de acordo com a disponibilidade de agenda.',
+    'faq.cta.title': 'Ainda tem dúvidas?',
+    'faq.cta.subtitle': 'Entre em contato conosco e teremos prazer em ajudá-lo!',
+    'faq.cta.button': 'Fale Conosco Agora',
   }
 };
 

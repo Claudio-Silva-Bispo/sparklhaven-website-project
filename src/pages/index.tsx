@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Service from '../components/Service'
 import FeedbackTestimonials from '../components/FeedbackTestimonials'
+import FAQ from '../components/tips'
 
 export default function Home() {
   return (
@@ -150,6 +151,7 @@ export default function Home() {
         <About/>
         <Service/>
         <FeedbackTestimonials/>
+        <FAQ/>
       </div>
     </>
   )
