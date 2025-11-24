@@ -14,7 +14,7 @@ export default function Navbar() {
     { item: 'nav.services', path: '#services', icon: '✨' },
     { item: 'nav.about', path: '#about', icon: '👥' },
     { item: 'nav.feedback', path: '#feedback', icon: '⭐' },
-    { item: 'nav.contact', path: '#contact', icon: '📧' },
+    // { item: 'nav.contact', path: '#contact', icon: '📧' },
   ];
 
   // Detecta scroll para mostrar/ocultar navbar no mobile

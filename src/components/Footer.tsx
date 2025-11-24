@@ -103,7 +103,7 @@ const Footer = () => {
                 👍
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/sparklhavencleaning/" target='_blink'
                 className={`w-10 h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center text-lg lg:text-xl hover:-translate-y-1 transition-all duration-300 ${
                   isDarkMode 
                     ? 'bg-blue-500/10 ring-1 ring-blue-500/20 hover:bg-blue-500/20 hover:ring-blue-500/40' 
@@ -219,6 +219,18 @@ const Footer = () => {
                   {t('footer.testimonials')}
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/sparklhavencleaning/" target='_blink'
+                  className={`text-sm lg:text-base transition-colors duration-300 block ${
+                    isDarkMode 
+                      ? 'text-gray-400 hover:text-blue-400' 
+                      : 'text-gray-600 hover:text-blue-700'
+                  }`}
+                >
+                  {t('Instagram')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -239,14 +251,14 @@ const Footer = () => {
                   isDarkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>{t('footer.email')}</div>
                 <a 
-                  href="mailto:contato@sparklhavencleaning.com" 
+                  href="mailto:sparklhavencleaning@gmail.com" 
                   className={`text-sm lg:text-base transition-colors duration-300 break-all ${
                     isDarkMode 
                       ? 'text-gray-200 hover:text-blue-400' 
                       : 'text-gray-800 hover:text-blue-700'
                   }`}
                 >
-                  contato@sparklhavencleaning.com
+                  sparklhavencleaning@gmail.com
                 </a>
               </div>
             </div>
