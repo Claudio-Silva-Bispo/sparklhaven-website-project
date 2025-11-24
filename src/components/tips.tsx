@@ -7,6 +7,8 @@ const FAQ: React.FC = () => {
   const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+ 
+
   const faqs = [
     {
       questionKey: 'faq.question1',
@@ -32,12 +34,24 @@ const FAQ: React.FC = () => {
       questionKey: 'faq.question5',
       answerKey: 'faq.answer5',
       icon: '📅'
+    },
+    {
+      questionKey: 'faq.question6',
+      answerKey: 'faq.answer6',
+      icon: '📱'
     }
   ];
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const socialMedia = [
+    { name: 'Instagram', url: 'https://www.instagram.com/sparklhavencleaning/', icon: '📷' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61583366373894', icon: '👍' },
+    { name: 'Twitter', url: 'https://x.com/Sparklhaven', icon: '🐦' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@SparklHavenCleaning', icon: '▶️' }
+  ];
 
   return (
     <section
@@ -135,32 +149,67 @@ const FAQ: React.FC = () => {
                 </div>
               </button>
 
-              {/* Answer */}
-              <div
-                className={`transition-all duration-300 ease-in-out p-5 ${
-                  openIndex === index
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
+{/* Answer */}
+<div
+  className={`transition-all duration-300 ease-in-out ${
+    openIndex === index
+      ? 'max-h-96 opacity-100'
+      : 'max-h-0 opacity-0'
+  }`}
+>
+  <div
+    className={`px-5 md:px-6 pb-5 md:pb-6 pt-0 ${
+      openIndex === index ? 'block' : 'hidden'
+    }`}
+  >
+    <div
+      className={`pl-10 md:pl-14 border-l-2 ${
+        isDarkMode
+          ? 'border-blue-500/30'
+          : 'border-blue-300'
+      }`}
+    >
+      {/* Resposta especial para redes sociais (pergunta 6) */}
+      {index === 5 ? (
+        <div>
+          <p className={`text-sm md:text-base leading-relaxed mb-4 ${
+            isDarkMode ? 'text-gray-300' : 'text-gray-700'
+          }`}>
+            {t(faq.answerKey)}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {socialMedia.map((social, idx) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  isDarkMode
+                    ? 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 ring-1 ring-blue-500/40'
+                    : 'bg-blue-100 text-blue-700 hover:bg-blue-200 ring-1 ring-blue-300'
                 }`}
               >
-                <div
-                  className={`px-5 md:px-6 pb-5 md:pb-6 pt-0 ${
-                    openIndex === index ? 'block' : 'hidden'
-                  }`}
-                >
-                  <div
-                    className={`pl-10 md:pl-14 border-l-2 ${
-                      isDarkMode
-                        ? 'border-blue-500/30 text-gray-300'
-                        : 'border-blue-300 text-gray-700'
-                    }`}
-                  >
-                    <p className="text-sm md:text-base leading-relaxed">
-                      {t(faq.answerKey)}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                <span className="text-lg">{social.icon}</span>
+                <span>{social.name}</span>
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <p className={`text-sm md:text-base leading-relaxed${
+          isDarkMode ? 'text-gray-300' : 'text-gray-700'
+        }`}>
+          {t(faq.answerKey)}
+        </p>
+      )}
+    </div>
+  </div>
+</div>
+             
             </div>
           ))}
         </div>

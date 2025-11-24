@@ -58,7 +58,7 @@ type TranslationKey =
   | 'faq.badge' | 'faq.title' | 'faq.subtitle'
   | 'faq.question1' | 'faq.answer1' | 'faq.question2' | 'faq.answer2' | 'faq.question3' | 'faq.answer3'
   | 'faq.question4' | 'faq.answer4' | 'faq.question5' | 'faq.answer5'
-  | 'faq.cta.title' | 'faq.cta.subtitle' | 'faq.cta.button';
+  | 'faq.cta.title' | 'faq.cta.subtitle' | 'faq.cta.button' | 'faq.question6' | 'faq.answer6';
 
 type Translations = Record<TranslationKey, string>;
 
@@ -273,6 +273,8 @@ const translations: Record<Language, Translations> = {
     'faq.cta.title': 'Still have questions?',
     'faq.cta.subtitle': 'Contact us and we\'ll be happy to help you!',
     'faq.cta.button': 'Contact Us Now',
+    'faq.question6': 'Do you have social media?',
+    'faq.answer6': 'Yes! Follow us on our social media to stay updated with tips, promotions, and our work!',
   },
   pt: {
     // Navbar
@@ -483,6 +485,8 @@ const translations: Record<Language, Translations> = {
     'faq.cta.title': 'Ainda tem dúvidas?',
     'faq.cta.subtitle': 'Entre em contato conosco e teremos prazer em ajudá-lo!',
     'faq.cta.button': 'Fale Conosco Agora',
+    'faq.question6': 'Vocês têm redes sociais?',
+    'faq.answer6': 'Sim! Nos siga nas redes sociais para ficar por dentro de dicas, promoções e nossos trabalhos!',
   }
 };
 
