@@ -1,8 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import { FaArrowUp, FaWhatsapp, FaSun, FaMoon } from 'react-icons/fa';
+import { FaArrowUp, FaWhatsapp, FaSun, FaMoon, FaShare, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { MdLanguage } from 'react-icons/md';
 import '../globals.css';
 
@@ -14,20 +15,50 @@ import { LanguageProvider, useLanguage } from '../contexts/LanguageContext';
 function AppContent({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showSocialMedia, setShowSocialMedia] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
+  const socialMenuRef = useRef<HTMLDivElement>(null);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setShowScrollTop(window.scrollY > 300);
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
+
+  // Fechar menu ao clicar fora
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (socialMenuRef.current && !socialMenuRef.current.contains(event.target as Node)) {
+        setShowSocialMedia(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    if (showSocialMedia) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showSocialMedia]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const socialLinks = [
+    { icon: FaInstagram, url: 'https://www.instagram.com/sparklhavencleaning/', color: 'from-pink-500 to-purple-600', label: 'Instagram' },
+    { icon: FaFacebook, url: 'https://www.facebook.com/profile.php?id=61583366373894', color: 'from-blue-600 to-blue-700', label: 'Facebook' },
+    { icon: FaYoutube, url: 'https://www.youtube.com/@SparklHavenCleaning', color: 'from-red-600 to-red-700', label: 'YouTube' },
+    { icon: FaXTwitter, url: 'https://x.com/Sparklhaven', color: 'from-gray-800 to-black', label: 'Twitter' },
+  ];
 
   return (
 
@@ -185,6 +216,35 @@ function AppContent({ Component, pageProps }: AppProps) {
           >
             <FaWhatsapp size={20} />
           </a>
+
+          {/* Container de Redes Sociais */}
+          <div ref={socialMenuRef} className="relative flex items-center">
+            {/* Ícones das Redes Sociais - Expandem para a esquerda */}
+            <div className={`absolute right-16 flex gap-2 transition-all duration-300 ${showSocialMedia ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-full bg-gradient-to-r ${social.color} text-white shadow-lg hover:scale-110 transition-all duration-300`}
+                  aria-label={social.label}
+                  style={{ transitionDelay: `${index * 50}ms` }}
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
+            </div>
+
+            {/* Botão de Compartilhar/Redes Sociais */}
+            <button
+              onClick={() => setShowSocialMedia(!showSocialMedia)}
+              className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 hover:scale-110"
+              aria-label="Redes Sociais"
+            >
+              <FaShare size={20} className={`transition-transform duration-300 ${showSocialMedia ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
 
           {/* Botão Voltar ao Topo */}
           {showScrollTop && (
