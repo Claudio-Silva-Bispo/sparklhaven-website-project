@@ -84,7 +84,9 @@ type TranslationKey =
   | 'article5.cta.title' | 'article5.cta.desc'
   | 'article6.title' | 'article6.intro' | 'article6.aeo' | 'article6.h2.1' | 'article6.p1.1'
   | 'article6.h2.2' | 'article6.p2.1' | 'article6.h2.3' | 'article6.p3.1'
-  | 'article6.cta.title' | 'article6.cta.desc';
+  | 'article6.cta.title' | 'article6.cta.desc'
+  | 'gallery.title' | 'gallery.subtitle' | 'gallery.areas.title' | 'gallery.areas.subtitle'
+  | 'gallery.cta.title' | 'gallery.cta.subtitle' | 'gallery.cta.button';
 
 type Translations = Record<TranslationKey, string>;
 
@@ -415,6 +417,15 @@ const translations: Record<Language, Translations> = {
     'article6.cta.title': 'Keep Your Office Spotless',
     'article6.cta.desc': 'We provide office and commercial cleaning in Seattle, Bellevue and Redmond with flexible schedules.',
 
+    // Gallery
+    'gallery.title': 'Our Work Gallery',
+    'gallery.subtitle': 'See the quality of our cleaning services across Seattle area',
+    'gallery.areas.title': 'Areas We Serve',
+    'gallery.areas.subtitle': 'Professional cleaning services throughout Greater Seattle Area',
+    'gallery.cta.title': 'Ready to Experience Our Service?',
+    'gallery.cta.subtitle': 'Schedule your cleaning today and see why families trust us',
+    'gallery.cta.button': 'Get Free Quote',
+
     
   },
   pt: {
@@ -740,6 +751,15 @@ const translations: Record<Language, Translations> = {
     'article6.p3.1': 'A frequência de limpeza depende do tamanho do escritório, número de funcionários e tipo de negócio. A maioria dos escritórios se beneficia de limpeza diária ou noturna para manter limpeza consistente e saúde dos funcionários. Escritórios menores podem agendar limpeza 2-3 vezes por semana. Áreas de alto tráfego como recepção e banheiros frequentemente precisam de atenção diária, enquanto salas de conferência podem ser limpas conforme necessário. Empresas de limpeza profissional em Seattle oferecem horários flexíveis, incluindo serviço após o expediente para evitar interromper suas operações comerciais.',
     'article6.cta.title': 'Mantenha Seu Escritório Impecável',
     'article6.cta.desc': 'Fornecemos limpeza de escritórios e comercial em Seattle, Bellevue e Redmond com horários flexíveis.',
+
+    // Gallery
+    'gallery.title': 'Galeria de Trabalhos',
+    'gallery.subtitle': 'Veja a qualidade dos nossos serviços de limpeza na região de Seattle',
+    'gallery.areas.title': 'Áreas de Atendimento',
+    'gallery.areas.subtitle': 'Serviços profissionais de limpeza em toda a Grande Seattle',
+    'gallery.cta.title': 'Pronto para Experimentar Nosso Serviço?',
+    'gallery.cta.subtitle': 'Agende sua limpeza hoje e veja por que as famílias confiam em nós',
+    'gallery.cta.button': 'Solicitar Orçamento Grátis',
   }
 };
 
