@@ -14,7 +14,8 @@ export default function Navbar() {
     { item: 'nav.services', path: '#services', icon: '✨' },
     { item: 'nav.about', path: '#about', icon: '👥' },
     { item: 'nav.feedback', path: '#feedback', icon: '⭐' },
-    // { item: 'nav.contact', path: '#contact', icon: '📧' },
+    { item: 'nav.blog', path: '/blog', icon: '📧' },
+    { item: 'nav.galeria', path: '/galeria', icon: '🖼️' },
   ];
 
   // Detecta scroll para mostrar/ocultar navbar no mobile
@@ -35,18 +36,27 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
     
     if (path.startsWith('#')) {
-      const sectionId = path.substring(1);
-      const element = document.getElementById(sectionId);
-      
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+      // Se está na home, faz scroll suave
+      if (window.location.pathname === '/') {
+        const sectionId = path.substring(1);
+        const element = document.getElementById(sectionId);
         
-        window.history.replaceState(null, '', path);
-        setActiveHash(path);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          window.history.replaceState(null, '', path);
+          setActiveHash(path);
+        }
+      } else {
+        // Se está em outra página (blog, galeria), vai para home + section
+        window.location.href = '/' + path;
       }
+    } else {
+      // Navegação normal para páginas (blog, galeria)
+      window.location.href = path;
     }
   };
 
