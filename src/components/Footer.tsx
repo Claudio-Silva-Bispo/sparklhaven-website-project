@@ -37,9 +37,6 @@ const Footer = () => {
           
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-24 h-24 lg:w-16 lg:h-16 bg-gradient-to-br from-[#62d517] to-[#62d517]/80 rounded-xl flex items-center justify-center text-lg lg:text-xl font-bold text-white shadow-lg">
-                ✨
-              </div>
               <div className={`text-xl lg:text-2xl font-bold bg-clip-text text-transparent ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-white to-gray-300' 
