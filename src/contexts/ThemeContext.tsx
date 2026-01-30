@@ -8,7 +8,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Começa com tema escuro
+  const [isDarkMode, setIsDarkMode] = useState(false); // Começa com tema claro
 
   // Carrega a preferência do localStorage
   useEffect(() => {
