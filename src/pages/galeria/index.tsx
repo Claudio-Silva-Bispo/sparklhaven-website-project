@@ -151,7 +151,7 @@ export default function GaleriaPage() {
           
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-[#62d517] hover:text-green-700 mb-8 text-sm font-medium"
           >
             <FaArrowLeft />
             Back to Home
@@ -194,16 +194,16 @@ export default function GaleriaPage() {
             ))}
             </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+          <div className="bg-[#001b3c] rounded-xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-3">
               {t('gallery.cta.title')}
             </h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-white mb-6">
               {t('gallery.cta.subtitle')}
             </p>
             <Link 
               href="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#62d517] hover:bg-green-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               {t('gallery.cta.button')}
             </Link>

@@ -28,7 +28,7 @@ const CompleteServicesPage = () => {
         "services.residential.feature5",
         "services.residential.feature6"
       ],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[#62d517] to-[#62d517]",
       borderColor: "ring-blue-400/40",
       images: [
         "../../assets/services/residential/residential-one.jpeg",
@@ -53,7 +53,7 @@ const CompleteServicesPage = () => {
         "services.commercial.feature5",
         "services.commercial.feature6"
       ],
-      color: "from-green-500 to-teal-500",
+      color: "from-[#62d517] to-[#62d517]",
       borderColor: "ring-green-400/40",
       images: [
         "/assets/services/commercial/clean.png",
@@ -77,7 +77,7 @@ const CompleteServicesPage = () => {
         "services.office.feature5",
         "services.office.feature6"
       ],
-      color: "from-purple-500 to-pink-500",
+      color: "from-[#62d517] to-[#62d517]",
       borderColor: "ring-purple-400/40",
       images: [
         "/assets/services/office/one.jpg",
@@ -100,7 +100,7 @@ const CompleteServicesPage = () => {
         "services.moveInOut.feature5",
         "services.moveInOut.feature6"
       ],
-      color: "from-orange-500 to-red-500",
+      color: "from-[#62d517] to-[#62d517]",
       borderColor: "ring-orange-400/40",
       images: [
         "/assets/services/move/move-in-one.PNG",
@@ -125,7 +125,7 @@ const CompleteServicesPage = () => {
         "services.trash.feature5",
         "services.trash.feature6"
       ],
-      color: "from-yellow-500 to-orange-500",
+      color: "from-[#62d517] to-[#62d517]",
       borderColor: "ring-yellow-400/40",
       images: [
         "/assets/services/trash/one.webp",
@@ -166,7 +166,6 @@ const CompleteServicesPage = () => {
   return (
     <>
       <Head>
-        {/* Schema para página de Serviços */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -282,30 +281,29 @@ const CompleteServicesPage = () => {
         className={`min-h-screen transition-colors duration-500 ${
           isDarkMode 
             ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
-            : 'bg-gradient-to-br from-blue-50 via-sky-100 to-indigo-50'
+            : 'bg-gray-100'
         }`} 
         id='services'
       >
-        {/* Main Services */}
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 lg:mb-20">
               <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-6 ${
                 isDarkMode 
-                  ? 'bg-blue-500/15 ring-1 ring-blue-500/30 text-blue-400' 
-                  : 'bg-blue-600/10 ring-1 ring-blue-600/30 text-blue-900'
+                  ? 'bg-[#62d517]/15 ring-1 ring-[#62d517]/30 text-white' 
+                  : 'bg-[#62d517] text-white'
               }`}>
                 <span>✨</span>
                 <span>{t('services.badge')}</span>
               </div>
-              <h2 className={`text-4xl lg:text-6xl font-extrabold mb-6 bg-clip-text text-transparent text-start lg:text-center pb-5 ${
+              <h2 className={`text-4xl lg:text-6xl font-extrabold mb-6 bg-clip-text text-transparent text-center pb-5 ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-white via-blue-400 to-purple-400' 
-                  : 'bg-gradient-to-r from-gray-800 via-blue-900 to-purple-900'
+                  : 'bg-gradient-to-r from-[#001b3c] via-[#001b3c] to-[#001b3c]'
               }`}>
                 {t('services.title')}
               </h2>
-              <p className={`text-xl max-w-3xl mx-auto text-start lg:text-center ${
+              <p className={`text-xl max-w-3xl mx-auto text-center ${
                 isDarkMode ? 'text-gray-400' : 'text-gray-700'
               }`}>
                 Professional Cleaning Services in Seattle, Kirkland, Bellevue & Surrounding Areas
@@ -316,27 +314,41 @@ const CompleteServicesPage = () => {
               {mainServices.map((service, index) => (
                 <div 
                   key={index}
-                  className={`bg-gradient-to-br from-gray-800 to-gray-900 backdrop-blur-sm ring-1 ${service.borderColor} rounded-3xl p-8 lg:p-12 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 group shadow-xl`}
+                  className={`backdrop-blur-sm ring-1 rounded-3xl p-8 lg:p-12 transition-all duration-500 group shadow-xl ${
+                    isDarkMode
+                      ? 'bg-gradient-to-br from-gray-800 to-gray-900 ring-white/10 hover:from-gray-700 hover:to-gray-800'
+                      : 'bg-white ring-gray-300 hover:shadow-2xl'
+                  }`}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     
-                    {/* Left Side - Icon & Title */}
                     <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
                       <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} bg-opacity-20 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         <span className="text-6xl">{service.icon}</span>
                       </div>
-                      <h3 className="text-3xl lg:text-4xl font-bold mb-3 text-white">{t(service.titleKey)}</h3>
-                      <p className="text-xl text-blue-400 mb-4">{t(service.subtitleKey)}</p>
-                      <p className="text-gray-300 text-lg leading-relaxed mb-6">{t(service.descKey)}</p>
+                      <h3 className={`text-3xl lg:text-4xl font-bold mb-3 ${
+                        isDarkMode ? 'text-white' : 'text-[#001b3c]'
+                      }`}>{t(service.titleKey)}</h3>
+                      <p className={`text-xl mb-4 ${
+                        isDarkMode ? 'text-blue-400' : 'text-[#62d517]'
+                      }`}>{t(service.subtitleKey)}</p>
+                      <p className={`text-lg leading-relaxed mb-6 ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>{t(service.descKey)}</p>
                       
-                      {/* Features List */}
-                      <div className="bg-gray-900/50 ring-1 ring-white/10 rounded-2xl p-6">
-                        <h4 className="text-lg font-semibold mb-4 text-gray-200">{t('hero.included')}</h4>
+                      <div className={`ring-1 rounded-2xl p-6 ${
+                        isDarkMode 
+                          ? 'bg-gray-900/50 ring-white/10' 
+                          : 'bg-gray-50 ring-gray-300'
+                      }`}>
+                        <h4 className={`text-lg font-semibold mb-4 ${
+                          isDarkMode ? 'text-gray-200' : 'text-[#001b3c]'
+                        }`}>{t('hero.included')}</h4>
                         <ul className="space-y-3">
                           {service.featureKeys.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-3">
-                              <span className="text-green-400 text-xl mt-0.5">✓</span>
-                              <span className="text-gray-300">{t(feature)}</span>
+                              <span className="text-[#62d517] text-xl mt-0.5">✓</span>
+                              <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{t(feature)}</span>
                             </li>
                           ))}
                         </ul>
@@ -344,7 +356,7 @@ const CompleteServicesPage = () => {
 
                       <button 
                         onClick={() => scrollToSection('contact')}
-                        className="mt-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-2 min-w-full justify-center"
+                        className="mt-6 bg-[#62d517] hover:bg-[#62d517]/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 min-w-full justify-center"
                       >
                         <a href="tel:+14254765411">
                           📞 {t('services.quote')}
@@ -352,9 +364,10 @@ const CompleteServicesPage = () => {
                       </button>
                     </div>
 
-                    {/* Right Side - Image Carousel */}
                     <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                      <div className="relative bg-gray-900/50 ring-1 ring-white/10 rounded-2xl overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[600px]">
+                      <div className={`relative ring-1 rounded-2xl overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[600px] ${
+                        isDarkMode ? 'bg-gray-900/50 ring-white/10' : 'bg-gray-100 ring-gray-300'
+                      }`}>
                         {service.images.map((img, imgIdx) => (
                           <div
                             key={imgIdx}
@@ -394,7 +407,7 @@ const CompleteServicesPage = () => {
                               }))}
                               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                                 currentImageIndexes[index] === dotIndex 
-                                  ? 'bg-blue-400 w-8' 
+                                  ? 'bg-[#62d517] w-8' 
                                   : 'bg-white/50 hover:bg-white/80'
                               }`}
                               aria-label={`View image ${dotIndex + 1}`}
@@ -410,28 +423,27 @@ const CompleteServicesPage = () => {
           </div>
         </section>
 
-        {/* Workflow Process */}
-        <section className={`py-20 backdrop-blur-sm ${
-          isDarkMode ? 'bg-white/5' : 'bg-white/30'
+        <section className={`py-20 backdrop-blur-sm  ${
+          isDarkMode ? 'bg-[#001b3c]' : 'bg-[#001b3c]'
         }`}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:text-center mb-16">
+            <div className="text-center mb-16">
               <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-6 ${
                 isDarkMode 
-                  ? 'bg-blue-500/15 ring-1 ring-blue-500/30 text-blue-400' 
-                  : 'bg-blue-600/10 ring-1 ring-blue-600/30 text-blue-900'
+                  ? 'bg-[#62d517]/15 ring-1 ring-[#62d517]/30 text-white' 
+                  : 'bg-white text-[#001b3c]'
               }`}>
                 <span>🔄</span>
                 <span>{t('services.workflow.badge')}</span>
               </div>
-              <h2 className={`text-4xl lg:text-6xl font-extrabold mb-6 bg-clip-text text-transparent ${
+              <h2 className={`text-lg lg:text-6xl font-extrabold mb-6 bg-clip-text text-transparent ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-white via-blue-400 to-purple-400' 
-                  : 'bg-gradient-to-r from-gray-800 via-blue-900 to-purple-900'
+                  : 'bg-gradient-to-r from-white via-white to-white'
               }`}>
                 {t('services.workflow.title')}
               </h2>
-              <p className={`text-xl ${isDarkMode ? 'text-gray-400' : 'text-gray-700'}`}>
+              <p className={`text-md ${isDarkMode ? 'text-gray-100' : 'text-gray-50'}`}>
                 {t('services.workflow.subtitle')}
               </p>
             </div>
@@ -440,16 +452,24 @@ const CompleteServicesPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-6">
                 {workflow.map((item, index) => (
                   <div key={index} className="relative">
-                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 ring-1 ring-blue-400/30 rounded-2xl p-6 text-center hover:scale-105 hover:from-gray-700 hover:to-gray-800 transition-all duration-300 shadow-lg">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white">
+                    <div className={`ring-1 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg ${
+                      isDarkMode
+                        ? 'bg-gradient-to-br from-gray-800 to-gray-900 ring-blue-400/30 hover:from-gray-700 hover:to-gray-800'
+                        : 'bg-white ring-gray-300 hover:shadow-xl'
+                    }`}>
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#62d517] to-[#62d517]/80 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white">
                         {item.step}
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-white">{t(item.titleKey)}</h3>
-                      <p className="text-sm text-gray-300">{t(item.descKey)}</p>
+                      <h3 className={`font-bold text-lg mb-2 ${
+                        isDarkMode ? 'text-white' : 'text-[#001b3c]'
+                      }`}>{t(item.titleKey)}</h3>
+                      <p className={`text-sm ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                      }`}>{t(item.descKey)}</p>
                     </div>
                     {index < workflow.length - 1 && (
                       <div className={`hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-2xl ${
-                        isDarkMode ? 'text-blue-500' : 'text-blue-600'
+                        isDarkMode ? 'text-blue-500' : 'text-[#62d517]'
                       }`}>
                         →
                       </div>
@@ -461,19 +481,26 @@ const CompleteServicesPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 ring-1 ring-blue-400/30 rounded-3xl p-12 text-center shadow-2xl">
-              <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
+            <div className={`ring-1 rounded-3xl p-12 text-center shadow-2xl ${
+              isDarkMode
+                ? 'bg-gradient-to-br from-white-800 to-gray-900 ring-blue-400/30'
+                : 'bg-white ring-gray-300'
+            }`}>
+              <h2 className={`text-3xl lg:text-5xl font-bold mb-6 ${
+                isDarkMode ? 'text-white' : 'text-[#001b3c]'
+              }`}>
                 {t('services.cta.title')}
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className={`text-xl mb-8 max-w-2xl mx-auto ${
+                isDarkMode ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Serving Seattle, Kirkland, Bellevue, Redmond, Bothell & Sammamish
               </p>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25"
+                className="bg-[#62d517] hover:bg-[#62d517]/90 text-white px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <a href="tel:+14254765411">
                   📞 {t('services.quote')}

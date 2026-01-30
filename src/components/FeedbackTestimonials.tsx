@@ -18,7 +18,6 @@ const FeedbackTestimonials = () => {
   const [submitted, setSubmitted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Depoimentos em português e inglês
   const testimonialsData = {
     pt: [
       {
@@ -185,7 +184,6 @@ const FeedbackTestimonials = () => {
   return (
     <>
       <Head>
-        {/* Schema para Reviews/Avaliações */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -253,18 +251,17 @@ const FeedbackTestimonials = () => {
         className={`py-20 lg:py-32 transition-colors duration-500 ${
           isDarkMode 
             ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
-            : 'bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50'
+            : 'bg-white'
         }`} 
         id="feedback"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
             <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-6 ${
               isDarkMode 
-                ? 'bg-blue-500/15 ring-1 ring-blue-500/30 text-blue-400' 
-                : 'bg-blue-600/10 ring-1 ring-blue-600/30 text-blue-900'
+                ? 'bg-[#62d517]/15 ring-1 ring-[#62d517]/30 text-white' 
+                : 'bg-[#62d517] text-white'
             }`}>
               <span>⭐</span>
               <span>{t('feedback.badge')}</span>
@@ -272,7 +269,7 @@ const FeedbackTestimonials = () => {
             <h2 className={`text-4xl lg:text-6xl font-extrabold mb-6 bg-clip-text text-transparent ${
               isDarkMode 
                 ? 'bg-gradient-to-r from-white via-blue-400 to-purple-400' 
-                : 'bg-gradient-to-r from-gray-800 via-blue-900 to-purple-900'
+                : 'bg-gradient-to-r from-[#001b3c] via-[#001b3c] to-[#001b3c]'
             }`}>
               {t('feedback.title')}
             </h2>
@@ -283,26 +280,23 @@ const FeedbackTestimonials = () => {
             </p>
           </div>
 
-          {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
             
-            {/* Left Column - Feedback Form */}
             <div className="flex">
               {!submitted ? (
                 <div className={`backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-xl w-full flex flex-col ${
                   isDarkMode 
                     ? 'bg-white/5 ring-1 ring-white/10' 
-                    : 'bg-white/80 ring-1 ring-blue-200/50'
+                    : 'bg-white/80 ring-1 ring-gray-300'
                 }`}>
                   
-                  {/* Rating Stars */}
                   <div className="mb-6">
-                    <label className={`block font-semibold mb-3 text-lg ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
+                    <label className={`block font-semibold mb-3 text-lg text-center ${
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`}>
                       {t('feedback.rate')}
                     </label>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 justify-center">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <button
                           key={star}
@@ -323,10 +317,9 @@ const FeedbackTestimonials = () => {
                     </div>
                   </div>
 
-                  {/* Name */}
                   <div className="mb-5">
                     <label className={`block font-semibold mb-2 ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`}>
                       {t('feedback.name')}
                     </label>
@@ -334,20 +327,19 @@ const FeedbackTestimonials = () => {
                       type="text"
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
-                      className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                      className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#62d517] transition-all ${
                         isDarkMode 
                           ? 'bg-white/10 ring-1 ring-white/20 text-white placeholder-gray-400' 
-                          : 'bg-white ring-1 ring-blue-200/50 text-gray-800 placeholder-gray-500'
+                          : 'bg-white ring-1 ring-gray-300 text-gray-800 placeholder-gray-500'
                       }`}
                       placeholder={t('feedback.namePlaceholder')}
                     />
                   </div>
 
-                  {/* Email & Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label className={`block font-semibold mb-2 ${
-                        isDarkMode ? 'text-white' : 'text-gray-800'
+                        isDarkMode ? 'text-white' : 'text-[#001b3c]'
                       }`}>
                         {t('feedback.email')}
                       </label>
@@ -355,17 +347,17 @@ const FeedbackTestimonials = () => {
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleChange('email', e.target.value)}
-                        className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                        className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#62d517] transition-all ${
                           isDarkMode 
                             ? 'bg-white/10 ring-1 ring-white/20 text-white placeholder-gray-400' 
-                            : 'bg-white ring-1 ring-blue-200/50 text-gray-800 placeholder-gray-500'
+                            : 'bg-white ring-1 ring-gray-300 text-gray-800 placeholder-gray-500'
                         }`}
                         placeholder={t('feedback.emailPlaceholder')}
                       />
                     </div>
                     <div>
                       <label className={`block font-semibold mb-2 ${
-                        isDarkMode ? 'text-white' : 'text-gray-800'
+                        isDarkMode ? 'text-white' : 'text-[#001b3c]'
                       }`}>
                         {t('feedback.phone')}
                       </label>
@@ -373,20 +365,19 @@ const FeedbackTestimonials = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
-                        className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                        className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#62d517] transition-all ${
                           isDarkMode 
                             ? 'bg-white/10 ring-1 ring-white/20 text-white placeholder-gray-400' 
-                            : 'bg-white ring-1 ring-blue-200/50 text-gray-800 placeholder-gray-500'
+                            : 'bg-white ring-1 ring-gray-300 text-gray-800 placeholder-gray-500'
                         }`}
                         placeholder={t('feedback.phonePlaceholder')}
                       />
                     </div>
                   </div>
 
-                  {/* Message */}
                   <div className="mb-6 flex-1">
                     <label className={`block font-semibold mb-2 ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`}>
                       {t('feedback.message')}
                     </label>
@@ -394,37 +385,35 @@ const FeedbackTestimonials = () => {
                       value={formData.message}
                       onChange={(e) => handleChange('message', e.target.value)}
                       rows={5}
-                      className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none h-full ${
+                      className={`w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#62d517] transition-all resize-none h-full ${
                         isDarkMode 
                           ? 'bg-white/10 ring-1 ring-white/20 text-white placeholder-gray-400' 
-                          : 'bg-white ring-1 ring-blue-200/50 text-gray-800 placeholder-gray-500'
+                          : 'bg-white ring-1 ring-gray-300 text-gray-800 placeholder-gray-500'
                       }`}
                       placeholder={t('feedback.messagePlaceholder')}
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     onClick={handleSubmit}
                     disabled={rating === 0 || !formData.name || !formData.email || !formData.phone || !formData.message}
-                    className="w-full mt-5 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
+                    className="w-full mt-5 bg-[#62d517] hover:bg-[#62d517]/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
                     {t('feedback.submit')}
                   </button>
                 </div>
               ) : (
-                // Success Message
                 <div className={`backdrop-blur-sm rounded-3xl p-12 text-center shadow-xl w-full flex flex-col items-center justify-center ${
                   isDarkMode 
                     ? 'bg-white/5 ring-1 ring-white/10' 
-                    : 'bg-white/80 ring-1 ring-blue-200/50'
+                    : 'bg-white/80 ring-1 ring-gray-300'
                 }`}>
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#62d517] to-[#62d517]/80 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
                     <CheckCircle className="w-12 h-12 text-white" />
                   </div>
                   <h3 className={`text-3xl font-bold mb-4 ${
-                    isDarkMode ? 'text-white' : 'text-gray-800'
+                    isDarkMode ? 'text-white' : 'text-[#001b3c]'
                   }`}>
                     {t('feedback.thanks')}
                   </h3>
@@ -437,44 +426,38 @@ const FeedbackTestimonials = () => {
               )}
             </div>
 
-            {/* Right Column - Testimonials Carousel */}
             <div className="relative flex">
               <div className={`backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-xl w-full flex flex-col ${
                 isDarkMode 
                   ? 'bg-white/5 ring-1 ring-white/10' 
-                  : 'bg-white/80 ring-1 ring-blue-200/50'
+                  : 'bg-white/80 ring-1 ring-gray-300'
               }`}>
                 
-                {/* Quote Icon */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#62d517] to-[#62d517]/80 rounded-full flex items-center justify-center shadow-lg">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
 
-                {/* Current Testimonial */}
                 <div className="flex-1 flex flex-col justify-center">
-                  {/* Rating */}
                   <div className="flex gap-1 mb-6">
                     {[...Array(testimonials[currentIndex].rating)].map((_, idx) => (
                       <Star key={idx} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
 
-                  {/* Text */}
                   <p className={`text-lg lg:text-xl mb-8 leading-relaxed italic ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
                     "{testimonials[currentIndex].text}"
                   </p>
 
-                  {/* Author Info */}
                   <div className={`pt-6 border-t ${
-                    isDarkMode ? 'border-white/10' : 'border-blue-200/30'
+                    isDarkMode ? 'border-white/10' : 'border-gray-300'
                   }`}>
                     <h4 className={`font-bold text-lg ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`}>{testimonials[currentIndex].name}</h4>
                     <p className={`font-medium ${
-                      isDarkMode ? 'text-blue-400' : 'text-blue-700'
+                      isDarkMode ? 'text-blue-400' : 'text-[#62d517]'
                     }`}>{testimonials[currentIndex].role}</p>
                     <p className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -482,22 +465,20 @@ const FeedbackTestimonials = () => {
                   </div>
                 </div>
 
-                {/* Navigation */}
                 <div className="flex items-center justify-between mt-8">
                   <button
                     onClick={prevSlide}
                     className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${
                       isDarkMode 
                         ? 'bg-white/10 hover:bg-white/20 ring-1 ring-white/20' 
-                        : 'bg-blue-100 hover:bg-blue-200 ring-1 ring-blue-300/40'
+                        : 'bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-300'
                     }`}
                   >
                     <ChevronLeft className={`w-6 h-6 ${
-                      isDarkMode ? 'text-white' : 'text-blue-900'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`} />
                   </button>
 
-                  {/* Dots */}
                   <div className="flex gap-2">
                     {testimonials.map((_, index) => (
                       <button
@@ -505,10 +486,10 @@ const FeedbackTestimonials = () => {
                         onClick={() => setCurrentIndex(index)}
                         className={`h-2 rounded-full transition-all duration-300 ${
                           index === currentIndex 
-                            ? 'w-8 bg-blue-500' 
+                            ? 'w-8 bg-[#62d517]' 
                             : isDarkMode 
                               ? 'w-2 bg-white/30' 
-                              : 'w-2 bg-blue-300'
+                              : 'w-2 bg-gray-300'
                         }`}
                       />
                     ))}
@@ -519,11 +500,11 @@ const FeedbackTestimonials = () => {
                     className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${
                       isDarkMode 
                         ? 'bg-white/10 hover:bg-white/20 ring-1 ring-white/20' 
-                        : 'bg-blue-100 hover:bg-blue-200 ring-1 ring-blue-300/40'
+                        : 'bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-300'
                     }`}
                   >
                     <ChevronRight className={`w-6 h-6 ${
-                      isDarkMode ? 'text-white' : 'text-blue-900'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`} />
                   </button>
                 </div>

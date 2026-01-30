@@ -7,8 +7,6 @@ const FAQ: React.FC = () => {
   const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
- 
-
   const faqs = [
     {
       questionKey: 'faq.question1',
@@ -59,17 +57,16 @@ const FAQ: React.FC = () => {
       className={`py-16 md:py-24 transition-colors duration-500 ${
         isDarkMode
           ? 'bg-gradient-to-b from-gray-900 to-gray-800'
-          : 'bg-gradient-to-b from-gray-50 to-white'
+          : 'bg-white'
       }`}
     >
       <div className="container mx-auto px-5">
-        {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fadeInUp">
           <div
             className={`inline-flex items-center gap-2 rounded-full text-xs sm:text-sm font-medium px-3 py-1.5 mb-4 ${
               isDarkMode
-                ? 'bg-blue-500/10 ring-1 ring-blue-500/30 text-blue-400'
-                : 'bg-blue-600/10 ring-1 ring-blue-600/30 text-blue-900'
+                ? 'bg-[#62d517] text-white'
+                : 'bg-[#62d517] text-white'
             }`}
           >
             <span>❓</span> <span>{t('faq.badge')}</span>
@@ -77,7 +74,7 @@ const FAQ: React.FC = () => {
 
           <h2
             className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
-              isDarkMode ? 'text-white' : 'text-gray-900'
+              isDarkMode ? 'text-white' : 'text-[#001b3c]'
             }`}
           >
             {t('faq.title')}
@@ -92,7 +89,6 @@ const FAQ: React.FC = () => {
           </p>
         </div>
 
-        {/* FAQ Accordion */}
         <div className="mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <div
@@ -100,10 +96,9 @@ const FAQ: React.FC = () => {
               className={`rounded-xl overflow-hidden transition-all duration-300 ${
                 isDarkMode
                   ? 'bg-gray-800/50 ring-1 ring-gray-700/50'
-                  : 'bg-white ring-1 ring-gray-200 shadow-sm'
-              } ${openIndex === index ? 'ring-2 ' + (isDarkMode ? 'ring-blue-500/50' : 'ring-blue-500/30') : ''}`}
+                  : 'bg-white ring-1 ring-gray-300 shadow-sm'
+              } ${openIndex === index ? 'ring-2 ' + (isDarkMode ? 'ring-[#62d517]/50' : 'ring-[#62d517]/30') : ''}`}
             >
-              {/* Question Button */}
               <button
                 onClick={() => toggleAccordion(index)}
                 className={`w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left transition-colors duration-300 ${
@@ -118,19 +113,18 @@ const FAQ: React.FC = () => {
                   </span>
                   <h3
                     className={`font-semibold text-base md:text-lg leading-relaxed ${
-                      isDarkMode ? 'text-white' : 'text-gray-900'
+                      isDarkMode ? 'text-white' : 'text-[#001b3c]'
                     }`}
                   >
                     {t(faq.questionKey)}
                   </h3>
                 </div>
 
-                {/* Arrow Icon */}
                 <div
                   className={`flex-shrink-0 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center rounded-full transition-all duration-300 ${
                     isDarkMode
-                      ? 'bg-blue-500/20 text-blue-400'
-                      : 'bg-blue-100 text-blue-600'
+                      ? 'bg-[#62d517]/20 text-[#62d517]'
+                      : 'bg-gray-100 text-[#62d517]'
                   } ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}
                 >
                   <svg
@@ -149,82 +143,78 @@ const FAQ: React.FC = () => {
                 </div>
               </button>
 
-{/* Answer */}
-<div
-  className={`transition-all duration-300 ease-in-out ${
-    openIndex === index
-      ? 'max-h-96 opacity-100'
-      : 'max-h-0 opacity-0'
-  }`}
->
-  <div
-    className={`px-5 md:px-6 pb-5 md:pb-6 pt-0 ${
-      openIndex === index ? 'block' : 'hidden'
-    }`}
-  >
-    <div
-      className={`pl-10 md:pl-14 border-l-2 ${
-        isDarkMode
-          ? 'border-blue-500/30'
-          : 'border-blue-300'
-      }`}
-    >
-      {/* Resposta especial para redes sociais (pergunta 6) */}
-      {index === 5 ? (
-        <div>
-          <p className={`text-sm md:text-base leading-relaxed mb-4 ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-700'
-          }`}>
-            {t(faq.answerKey)}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {socialMedia.map((social, idx) => (
-              <a
-                key={idx}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                  isDarkMode
-                    ? 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 ring-1 ring-blue-500/40'
-                    : 'bg-blue-100 text-blue-700 hover:bg-blue-200 ring-1 ring-blue-300'
+              <div
+                className={`transition-all duration-300 ease-in-out ${
+                  openIndex === index
+                    ? 'max-h-96 opacity-100'
+                    : 'max-h-0 opacity-0'
                 }`}
               >
-                <span className="text-lg">{social.icon}</span>
-                <span>{social.name}</span>
-                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <p className={`text-sm md:text-base leading-relaxed${
-          isDarkMode ? 'text-gray-300' : 'text-gray-700'
-        }`}>
-          {t(faq.answerKey)}
-        </p>
-      )}
-    </div>
-  </div>
-</div>
-             
+                <div
+                  className={`px-5 md:px-6 pb-5 md:pb-6 pt-0 ${
+                    openIndex === index ? 'block' : 'hidden'
+                  }`}
+                >
+                  <div
+                    className={`pl-10 md:pl-14 border-l-2 ${
+                      isDarkMode
+                        ? 'border-[#62d517]/30'
+                        : 'border-[#62d517]'
+                    }`}
+                  >
+                    {index === 5 ? (
+                      <div>
+                        <p className={`text-sm md:text-base leading-relaxed mb-4 ${
+                          isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          {t(faq.answerKey)}
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          {socialMedia.map((social, idx) => (
+                            <a
+                              key={idx}
+                              href={social.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                                isDarkMode
+                                  ? 'bg-[#62d517]/20 text-[#62d517] hover:bg-[#62d517]/30 ring-1 ring-[#62d517]/40'
+                                  : 'bg-gray-100 text-[#001b3c] hover:bg-[#62d517]/10 ring-1 ring-gray-300 hover:ring-[#62d517]'
+                              }`}
+                            >
+                              <span className="text-lg">{social.icon}</span>
+                              <span>{social.name}</span>
+                              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <p className={`text-sm md:text-base leading-relaxed ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
+                        {t(faq.answerKey)}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* CTA Section */}
         <div
           className={`mt-12 md:mt-16 text-center p-6 md:p-8 rounded-2xl ${
             isDarkMode
-              ? 'bg-blue-500/10 ring-1 ring-blue-500/30'
-              : 'bg-blue-50 ring-1 ring-blue-200'
+              ? 'bg-[#62d517]/10 ring-1 ring-[#62d517]/30'
+              : 'bg-gray-50 ring-1 ring-gray-300'
           }`}
         >
           <h3
             className={`text-xl md:text-2xl font-bold mb-3 ${
-              isDarkMode ? 'text-white' : 'text-gray-900'
+              isDarkMode ? 'text-white' : 'text-[#001b3c]'
             }`}
           >
             {t('faq.cta.title')}
@@ -238,7 +228,7 @@ const FAQ: React.FC = () => {
           </p>
           <a
             href="tel:+14254765411"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25"
+            className="inline-flex items-center gap-2 bg-[#62d517] hover:bg-[#62d517]/90 text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             📞 {t('faq.cta.button')}
           </a>

@@ -49,7 +49,6 @@ const About = () => {
   return (
     <>
       <Head>
-        {/* Schema para About/Empresa */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -127,29 +126,27 @@ const About = () => {
         className={`relative py-20 lg:py-32 overflow-hidden transition-colors duration-500 ${
           isDarkMode 
             ? 'bg-gradient-to-br from-gray-800 to-gray-900' 
-            : 'bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50'
+            : 'bg-white'
         }`}
       >
-        {/* Background Effects */}
         <div className="absolute inset-0">
           <div className={`absolute top-0 left-0 w-full h-full ${isDarkMode ? 'opacity-10' : 'opacity-20'}`}>
             <div className={`absolute top-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl ${
-              isDarkMode ? 'bg-blue-500/20' : 'bg-blue-200'
+              isDarkMode ? 'bg-[#62d517]/20' : 'bg-gray-200'
             }`}></div>
             <div className={`absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full blur-3xl ${
-              isDarkMode ? 'bg-blue-500/15' : 'bg-indigo-200'
+              isDarkMode ? 'bg-[#62d517]/15' : 'bg-gray-200'
             }`}></div>
           </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Section Header */}
           <div className="text-center mb-16 lg:mb-20">
             <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-5 ${
               isDarkMode 
-                ? 'bg-blue-500/15 ring-1 ring-blue-500/30 text-blue-400' 
-                : 'bg-blue-600/10 ring-1 ring-blue-600/30 text-blue-900'
+                ? 'bg-[#62d517]/15 ring-1 ring-[#62d517] text-white' 
+                : 'bg-[#62d517] text-white'
             }`}>
               <span>👨‍👩‍👧‍👦</span>
               <span>{t('about.badge')}</span>
@@ -157,8 +154,8 @@ const About = () => {
             
             <h2 className={`text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold mb-6 bg-clip-text text-transparent text-start lg:text-center ${
               isDarkMode 
-                ? 'bg-gradient-to-r from-white to-blue-400' 
-                : 'bg-gradient-to-r from-gray-800 via-blue-900 to-blue-800'
+                ? 'bg-gradient-to-r from-white to-gray-300' 
+                : 'bg-gradient-to-r from-[#001b3c] via-[#001b3c] to-[#001b3c]'
             }`}>
               {t('about.title')}
             </h2>
@@ -170,17 +167,15 @@ const About = () => {
             </p>
           </div>
 
-          {/* Personal Intro */}
           <div className={`backdrop-blur-sm rounded-2xl p-8 lg:p-12 mb-16 shadow-xl transition-all duration-700 ${
             isDarkMode 
               ? 'bg-white/5 ring-1 ring-white/10' 
-              : 'bg-white/80 ring-1 ring-blue-200/50'
+              : 'bg-white/80 ring-1 ring-gray-300'
           } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
               
-              {/* Avatar/Profile */}
               <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 mx-auto lg:mx-0 mb-6 rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 shadow-2xl">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 mx-auto lg:mx-0 mb-6 rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#62d517] to-[#62d517]/80 shadow-2xl">
                   {showPhoto ? (
                     <img
                       src="/assets/services/couple/foto.jpg" 
@@ -195,7 +190,7 @@ const About = () => {
                 </div>
 
                 <div className={`font-semibold mb-2 text-lg ${
-                  isDarkMode ? 'text-blue-400' : 'text-blue-700'
+                  isDarkMode ? 'text-[#62d517]' : 'text-[#62d517]'
                 }`}>
                   {t('about.company')}
                 </div>
@@ -206,7 +201,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Bio */}
               <div className="lg:col-span-2 space-y-4">
                 <p className={`leading-relaxed ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
@@ -224,16 +218,15 @@ const About = () => {
                   {t('about.bio3')}
                 </p>
 
-                {/* Valores */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
                   <div className={`ring-1 rounded-lg p-4 text-center transition-colors ${
                     isDarkMode 
-                      ? 'bg-blue-500/10 ring-blue-500/20 hover:bg-blue-500/20' 
-                      : 'bg-blue-100/70 ring-blue-300/40 hover:bg-blue-100'
+                      ? 'bg-[#62d517]/10 ring-[#62d517]/20 hover:bg-[#62d517]/20' 
+                      : 'bg-gray-100/70 ring-gray-300 hover:bg-gray-100'
                   }`}>
                     <div className="text-3xl mb-2">❤️</div>
                     <div className={`font-semibold mb-1 ${
-                      isDarkMode ? 'text-blue-400' : 'text-blue-700'
+                      isDarkMode ? 'text-[#62d517]' : 'text-[#62d517]'
                     }`}>{t('about.care')}</div>
                     <div className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -241,12 +234,12 @@ const About = () => {
                   </div>
                   <div className={`ring-1 rounded-lg p-4 text-center transition-colors ${
                     isDarkMode 
-                      ? 'bg-blue-500/10 ring-blue-500/20 hover:bg-blue-500/20' 
-                      : 'bg-blue-100/70 ring-blue-300/40 hover:bg-blue-100'
+                      ? 'bg-[#62d517]/10 ring-[#62d517]/20 hover:bg-[#62d517]/20' 
+                      : 'bg-gray-100/70 ring-gray-300 hover:bg-gray-100'
                   }`}>
                     <div className="text-3xl mb-2">🤝</div>
                     <div className={`font-semibold mb-1 ${
-                      isDarkMode ? 'text-blue-400' : 'text-blue-700'
+                      isDarkMode ? 'text-[#62d517]' : 'text-[#62d517]'
                     }`}>{t('about.trust')}</div>
                     <div className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -254,12 +247,12 @@ const About = () => {
                   </div>
                   <div className={`ring-1 rounded-lg p-4 text-center transition-colors ${
                     isDarkMode 
-                      ? 'bg-blue-500/10 ring-blue-500/20 hover:bg-blue-500/20' 
-                      : 'bg-blue-100/70 ring-blue-300/40 hover:bg-blue-100'
+                      ? 'bg-[#62d517]/10 ring-[#62d517]/20 hover:bg-[#62d517]/20' 
+                      : 'bg-gray-100/70 ring-gray-300 hover:bg-gray-100'
                   }`}>
                     <div className="text-3xl mb-2">⭐</div>
                     <div className={`font-semibold mb-1 ${
-                      isDarkMode ? 'text-blue-400' : 'text-blue-700'
+                      isDarkMode ? 'text-[#62d517]' : 'text-[#62d517]'
                     }`}>{t('about.dedication')}</div>
                     <div className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -270,7 +263,7 @@ const About = () => {
                 <div className="flex flex-col sm:flex-row gap-4 items-center pt-6">
                   <button 
                     onClick={() => scrollToSection('contact')}
-                    className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-4 py-4 lg:px-8 lg:py-4 rounded-lg font-semibold md:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 flex items-center w-full justify-center"
+                    className="bg-[#62d517] hover:bg-[#62d517]/90 text-white px-4 py-4 lg:px-8 lg:py-4 rounded-lg font-semibold md:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center w-full justify-center"
                   >
                     <a href="tel:+14254765411">
                       📞 {t('hero.cta')}
@@ -281,7 +274,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Why Choose Us - Cards sempre escuros */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 backdrop-blur-sm ring-1 ring-white/10 rounded-xl p-6 hover:from-gray-700 hover:to-gray-800 hover:shadow-xl transition-all duration-300">
               <div className="text-4xl mb-4">🏡</div>

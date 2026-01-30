@@ -23,7 +23,7 @@ export default function HouseCleaningSeattleArticle() {
           
           <Link 
             href="/blog"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-[#001b3c] hover:text-blue-700 mb-6 text-sm font-medium"
           >
             <FaArrowLeft />
             {t('blog.readMore').replace('article', 'Blog')}
@@ -31,7 +31,7 @@ export default function HouseCleaningSeattleArticle() {
 
           <div className="mb-8">
             <div className="flex items-center gap-3 text-sm text-gray-500 mb-4">
-              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
+              <span className="px-3 py-1 bg-[#62d517] text-white rounded-full font-medium">
                 {t('blog.post1.category')}
               </span>
               <span className="flex items-center gap-1">
@@ -50,7 +50,7 @@ export default function HouseCleaningSeattleArticle() {
               {t('article1.intro')}
             </p>
 
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 my-8">
+            <div className="bg-gray-50 border-l-4 border-[#62d517] p-4 my-8">
               <p className="text-gray-800 font-medium">
                 <strong>Quick Answer:</strong> {t('article1.aeo')}
               </p>
@@ -86,16 +86,16 @@ export default function HouseCleaningSeattleArticle() {
               {t('article1.p3.2')}
             </p>
 
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-8 mt-12 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            <div className="bg-gradient-to-r bg-[#001b3c] rounded-xl p-8 mt-12 text-center">
+              <h3 className="text-2xl font-bold text-white mb-3">
                 {t('article1.cta.title')}
               </h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-white mb-6">
                 {t('article1.cta.desc')}
               </p>
               <Link 
                 href="/quote"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#62d517] hover:bg-green-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
               >
                 {t('blog.cta.button')}
                 <FaArrowRight />

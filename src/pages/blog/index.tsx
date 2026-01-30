@@ -1,4 +1,3 @@
-
 import Head from 'next/head';
 import Link from 'next/link';
 import { FaArrowRight, FaClock, FaTag } from 'react-icons/fa';
@@ -75,7 +74,7 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mt-15">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#001b3c] mb-3 md:mt-15">
               {t('blog.title')}
             </h1>
             <p className="text-gray-600">
@@ -91,7 +90,7 @@ export default function BlogPage() {
                 className="group block"
               >
                 <article 
-                  className="border-b border-gray-200 pb-6 hover:border-blue-300 transition-all"
+                  className="border-b border-gray-200 pb-6 hover:border-[#62d517] transition-all"
                   style={{
                     animation: `fadeIn 0.4s ease-out ${index * 0.05}s both`
                   }}
@@ -99,7 +98,7 @@ export default function BlogPage() {
                   <div className="flex items-start gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 text-xs text-gray-500 mb-2">
-                        <span className="px-2 py-1 bg-blue-50 text-blue-600 rounded">
+                        <span className="px-2 py-1 bg-[#62d517]/10 text-[#62d517] rounded ring-1 ring-gray-300">
                           {t(post.categoryKey)}
                         </span>
                         <span className="flex items-center gap-1">
@@ -108,7 +107,7 @@ export default function BlogPage() {
                         </span>
                       </div>
 
-                      <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h2 className="text-xl font-bold text-[#001b3c] mb-2 group-hover:text-[#62d517] transition-colors">
                         {t(post.titleKey)}
                       </h2>
 
@@ -116,7 +115,7 @@ export default function BlogPage() {
                         {t(post.descKey)}
                       </p>
 
-                      <span className="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold group-hover:gap-3 transition-all">
+                      <span className="inline-flex items-center gap-2 text-[#62d517] text-sm font-semibold group-hover:gap-3 transition-all">
                         {t('blog.readMore')}
                         <FaArrowRight className="text-xs" />
                       </span>
@@ -127,8 +126,8 @@ export default function BlogPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center bg-blue-50 ring-1 ring-blue-200 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <div className="mt-12 text-center bg-gray-50 ring-1 ring-gray-300 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-[#001b3c] mb-2">
               {t('blog.cta.title')}
             </h3>
             <p className="text-gray-600 text-sm mb-4">
@@ -136,7 +135,7 @@ export default function BlogPage() {
             </p>
             <Link 
               href="/quote"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#62d517] hover:bg-[#62d517]/90 text-white font-semibold rounded-lg transition-all"
             >
               {t('blog.cta.button')}
               <FaArrowRight className="text-sm" />
